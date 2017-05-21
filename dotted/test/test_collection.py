@@ -333,11 +333,11 @@ class DottedCollectionTests(unittest.TestCase):
         data = DottedCollection.load_json(json_value)
         self.assertIsInstance(data, DottedDict)
         self.assertEqual(repr(data["facets"]["d\.o\. origen"]),
-                         repr([u"rioja", u"ribera del duero", u"d.o. bierzo"]))
+                         repr(["rioja", "ribera del duero", "d.o. bierzo"]))
         self.assertEqual(repr(data["facets.d\.o\. origen"]),
-                         repr([u"rioja", u"ribera del duero", u"d.o. bierzo"]))
-        self.assertEqual(data["facets.d\.o\. origen.0"], u"rioja")
-        self.assertEqual(data["facets.d\.o\. origen.2"], u"d.o. bierzo")
+                         repr(["rioja", "ribera del duero", "d.o. bierzo"]))
+        self.assertEqual(data["facets.d\.o\. origen.0"], "rioja")
+        self.assertEqual(data["facets.d\.o\. origen.2"], "d.o. bierzo")
         data["do\.not\.split"] = True
         self.assertTrue(data["do\.not\.split"])
         data["split.this\.not"] = False
